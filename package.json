@@ -1,0 +1,22 @@
+{
+  "name": "leetcodechallenges",
+  "version": "1.0.0",
+  "description": "HR Grads collaborating on coding challenges",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt-heindel/leetCodeChallenges.git"
+  },
+  "author": "PatryHaus54",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matt-heindel/leetCodeChallenges/issues"
+  },
+  "homepage": "https://github.com/matt-heindel/leetCodeChallenges#readme",
+  "dependencies": {
+    "jest": "^27.2.0"
+  }
+}
