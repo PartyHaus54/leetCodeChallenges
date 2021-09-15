@@ -21,12 +21,26 @@ Input: s = "Test1ng-Leet=code-Q!"
 Output: "Qedo1ct-eeLg=ntse-T!"
 */
 
-/**
- * @param {string} s
- * @return {string}
- */
- var reverseOnlyLetters = function(s) {
-  // TODO: implement
+const reverseOnlyLetters = (s) => {
+  const ENGLISH = {};
+  'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach((ch) => {
+    ENGLISH[ch] = true;
+  });
+  const arr = s.split('');
+  let left = 0;
+  let right = s.length - 1;
+  while (left < right) {
+    if (ENGLISH[s[left]] === undefined) {
+      left += 1;
+    } else if (ENGLISH[s[right]] === undefined) {
+      right -= 1;
+    } else {
+      [arr[left], arr[right]] = [arr[right], arr[left]];
+      left += 1;
+      right -= 1;
+    }
+  }
+  return arr.join('');
 };
 
 module.exports = reverseOnlyLetters;
