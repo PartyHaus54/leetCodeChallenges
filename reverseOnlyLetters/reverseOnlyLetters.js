@@ -54,7 +54,7 @@ Output: "Qedo1ct-eeLg=ntse-T!"
   return sReversed;
 };
 
-var r1 = reverseOnlyLetters('--1-y--zZ');
-console.log('--1-y--zZ', r1);
+// var r1 = reverseOnlyLetters('--1-y--zZ');
+// console.log('--1-y--zZ', r1);
 
 //module.exports = reverseOnlyLetters;
