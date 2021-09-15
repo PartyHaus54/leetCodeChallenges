@@ -26,16 +26,18 @@ const reverseOnlyLetters = (s) => {
   'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach((ch) => {
     ENGLISH[ch] = true;
   });
-  const arr = [];
-  let frontPointer = 0;
-  for (let i = s.length - 1; i >= 0; i -= 1) {
-    const currentLetter = s[i];
-    if (ENGLISH[currentLetter]) {
-      arr[frontPointer] = currentLetter;
-      frontPointer += 1;
+  const arr = s.split('');
+  let left = 0;
+  let right = s.length - 1;
+  while (left < right) {
+    if (ENGLISH[s[left]] === undefined) {
+      left += 1;
+    } else if (ENGLISH[s[right]] === undefined) {
+      right -= 1;
     } else {
-      arr[i] = currentLetter;
-      frontPointer += 1;
+      [arr[left], arr[right]] = [arr[right], arr[left]];
+      left += 1;
+      right -= 1;
     }
   }
   return arr.join('');
