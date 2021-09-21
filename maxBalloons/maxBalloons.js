@@ -24,6 +24,40 @@ Output: 0
 
 const maxBalloons = (str) => {
   // TODO: implement
-}
+  // Each character is needed a certain amount of times to make the entire word balloon
+  // each letter has a static requirement count because balloon is spelled the same way everytime
+  // We can simply count up the characters in the string, and then iterated through the characters of balloon to see which character is the limited factor, and more importantly, how many time we can use that character
+
+  // Instantiating the required keys as 0 to reduce complications of checking existence during the final division
+  var charCounts = {
+    b: 0,
+    a: 0,
+    l: 0,
+    o: 0,
+    n: 0
+  };
+
+  var charReqs = {
+    b: 1,
+    a: 1,
+    l: 2,
+    o: 2,
+    n: 1
+  };
+
+  var charSets = {};
+
+  for (var index = 0; index < str.length; index++) {
+    charCounts[str[index]]++;
+  }
+
+  for (var char in charReqs) {
+    charSets[char] = Math.floor(charCounts[char] / charReqs[char]);
+  }
+
+  var lowestCount = Math.min(Object.values(...charSets));
+
+  return lowestCount;
+};
 
 module.exports = maxBalloons;

@@ -27,6 +27,34 @@ Output: "Qedo1ct-eeLg=ntse-T!"
  */
  var reverseOnlyLetters = function(s) {
   // TODO: implement
+  // Make the array of the characters. Then you are done cause it's like homefree and stuff
+  var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  // Hard part is over
+  var reversedLetters = [];
+  for (var index = 0; index < s.length; index++) {
+    if (letters.includes(s[index])) {
+      reversedLetters.unshift(s[index]);
+    }
+  }
+  sReversed = '';
+  var oIndex = 0;
+  var rIndex = 0;
+  while (sReversed.length !== s.length) {
+    if (letters.includes(s[oIndex])) {
+      sReversed += reversedLetters[rIndex];
+      oIndex++;
+      rIndex++;
+    } else {
+      sReversed += s[oIndex];
+      oIndex++;
+    }
+  }
+
+  return sReversed;
 };
 
-module.exports = reverseOnlyLetters;
+// var r1 = reverseOnlyLetters('--1-y--zZ');
+// console.log('--1-y--zZ', r1);
+
+//module.exports = reverseOnlyLetters;
