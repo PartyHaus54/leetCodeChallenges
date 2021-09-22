@@ -36,6 +36,7 @@ Output: 1
  */
  var maxTurbulenceSize = function(arr) {
   // TODO: implement
+
 };
 
 module.exports = maxTurbulenceSize;
