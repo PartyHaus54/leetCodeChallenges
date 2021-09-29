@@ -34,6 +34,10 @@ var tictactoe = function (moves) {
     }
   }
 
+  if (moves.length === 9) {
+    winner = 'Draw';
+  }
+
   moves.forEach((coordinate, index) => {
     performMove(coordinate, index);
   });
@@ -62,6 +66,7 @@ var tictactoe = function (moves) {
   if (slashDiagonal.join('') === 'OOO') {
     winner = 'B';
   }
+
   if (backslashDiagonal.join('') === 'XXX') {
     winner = 'A';
   }
