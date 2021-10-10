@@ -2,18 +2,17 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-var canJump = function (nums) {
-  var canJumpNext = (index) => {
-    if (index + nums[index] >= nums.length) {
-      return true;
-    } else if (nums[index] > 0) {
-      return canJumpNext(index + nums[index]);
-    } else {
-      return false;
-    }
-  }
-  return canJumpNext(0);
-};
 
-var r1 = canJump([2, 3, 1, 1, 4]);
-console.log(r1);
+// Will need to recursively determine the various ranges that can be jumped and then jump them because only doing the max jump every time is an unnecessary and inaccurate
+
+var canJump = function (nums) {
+  var farthestReach = 0;
+  var index = 0;
+  while (farthestReach < nums.length && index <= farthestReach) {
+    if (index + nums[index] > farthestReach) {
+      farthestReach = index + nums[index];
+    }
+    index++;
+  }
+  return farthestReach >= nums.length - 1 ? true : false;
+};
