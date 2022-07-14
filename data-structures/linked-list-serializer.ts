@@ -1,11 +1,4 @@
-export class ListNode {
-  val: number
-  next: ListNode | null
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = (val === undefined ? 0 : val)
-    this.next = (next === undefined ? null : next)
-  }
-}
+import { ListNode } from "./linked-lists";
 
 export const linkedListSerializer = (listArray: any[]): ListNode => {
   let linkedList: ListNode = new ListNode(listArray[0]);
@@ -20,3 +13,5 @@ export const linkedListSerializer = (listArray: any[]): ListNode => {
 
   return linkedList;
 }
+
+console.log(linkedListSerializer([0, 2, 5]));
